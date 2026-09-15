@@ -1,0 +1,27 @@
+# configs/default_config.yaml
+experiment:
+  name: "uncertainty_dsc_kitti"
+  seed: 42
+  save_dir: "./checkpoints"
+
+data:
+  root: "/home/s2410433/uncertainty_dsc_v2x/data_raw/2011_09_26"
+  img_size: [256, 256]
+  batch_size: 64
+  num_workers: 4
+
+channel:
+  # Cho phép model làm quen với tỉ lệ mất gói từ 0% đến 50% trong quá trình train
+  train_erasure_range: [0.0, 0.5]
+  # Các mốc cố định để đánh giá kiểm thử và vẽ đồ thị PSNR vs. Erasure Rate
+  eval_erasure_rates: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5]
+
+loss_weights:
+  lambda_recon: 1.0        # Trọng số tái tạo ảnh Target Y
+  lambda_warp: 0.5         # Trọng số nhánh STN warping Y' tại vùng tin cậy
+  lambda_uncertainty: 0.1  # Phạt entropy để tránh suy biến về bản đồ rỗng U=0
+
+training:
+  epochs: 100
+  lr: 2.0e-4
+  weight_decay: 1.0e-5

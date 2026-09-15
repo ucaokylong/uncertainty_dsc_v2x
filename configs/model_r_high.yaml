@@ -1,0 +1,6 @@
+# configs/model_r_high.yaml
+compression:
+  name: "rate_high"
+  downsample_factor: 4     # Kích thước latent: 64 x 64 = 4096 tokens
+  codebook_size: 256       # 8 bits/token
+  r_actual_bpp: 0.5000     # Công thức: (64 * 64 * 8) / (256 * 256)

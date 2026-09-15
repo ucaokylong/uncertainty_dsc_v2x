@@ -1,0 +1,6 @@
+# configs/model_r_mid.yaml
+compression:
+  name: "rate_mid"
+  downsample_factor: 8     # Kích thước latent: 32 x 32 = 1024 tokens
+  codebook_size: 256       # 8 bits/token
+  r_actual_bpp: 0.1250     # Công thức: (32 * 32 * 8) / (256 * 256)

@@ -1,0 +1,32 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.cache/
+
+# Datasets & images nặng
+data/kitti/
+*.png
+*.jpg
+*.jpeg
+*.npy
+*.npz
+
+# Logs, checkpoints, Slurm outputs
+*.log
+*.pth
+*.pt
+*.tar
+DSC_Train_Output-*.log
+checkpoints/
+runs/
+experiments/
+
+# Environment / IDE
+.DS_Store
+.vscode/
+.idea/
+data_raw/
+data/*.zip
+data/*.tar*
+data_raw/

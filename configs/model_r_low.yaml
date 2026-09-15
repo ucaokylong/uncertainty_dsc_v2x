@@ -1,0 +1,6 @@
+# configs/model_r_low.yaml
+compression:
+  name: "rate_low"
+  downsample_factor: 16    # Kích thước latent: 16 x 16 = 256 tokens
+  codebook_size: 256       # 8 bits/token
+  r_actual_bpp: 0.03125    # Công thức: (16 * 16 * 8) / (256 * 256)
