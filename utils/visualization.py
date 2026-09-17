@@ -24,7 +24,7 @@ def save_comparison_grid(img_X, img_Y, img_Y_prime, img_Y_hat, uncertainty_map, 
     Y_hat = denormalize(img_Y_hat[0].cpu())
     
     # Xử lý Uncertainty Map thành Heatmap (Bản đồ nhiệt màu)
-    U = uncertainty_map[0, 0].cpu().numpy() # Lấy kênh đơn [H, W]
+    U = uncertainty_map[0, 0].float().cpu().numpy() # Lấy kênh đơn [H, W]
     U = np.clip(U, 0, 1)
     cmap = cm.get_cmap('jet') # Dùng thang màu Jet (Xanh -> Đỏ)
     U_color = cmap(U)[..., :3] # Lấy RGB, bỏ kênh Alpha

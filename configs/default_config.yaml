@@ -6,7 +6,7 @@ experiment:
 data:
   root: "/home/s2410433/uncertainty_dsc_v2x/data_raw/2011_09_26"
   img_size: [256, 256]
-  batch_size: 64
+  batch_size: 32
   num_workers: 4
 
 channel:
