@@ -1,0 +1,130 @@
+[*] Thoi gian bat dau: Wed 16 Sep 2026 04:04:43 AM JST
+[*] Node dang chay  : spcc-a40g13
+/bin/sh: /home/s2410433/miniconda3/envs/mamba_venv/lib/libtinfo.so.6: no version information available (required by /bin/sh)
+[*] Python dang dung: /home/s2410433/miniconda3/envs/mamba_venv/bin/python
+Wed Sep 16 04:04:43 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 575.57.08              Driver Version: 575.57.08      CUDA Version: 12.9     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:CA:00.0 Off |                    0 |
+|  0%   33C    P0             55W /  300W |       0MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+==========================================================
+[CHECK] Kiem tra import Torchvision & RAFT...
+==========================================================
+CUDA Ready: True | Device: NVIDIA A40
+Torchvision Version: 0.16.0+cu118
+==========================================================
+[RUNNING] Running Baselines Evaluation (JPEG, VQ-VAE, Naive, RAFT)...
+==========================================================
+
+==================================================
+EVALUATING: BASELINE 1 - JPEG
+==================================================
+JPEG Quality 10:   0%|          | 0/20 [00:00<?, ?it/s]JPEG Quality 10:   5%|▌         | 1/20 [00:01<00:23,  1.25s/it]JPEG Quality 10:  15%|█▌        | 3/20 [00:01<00:06,  2.76it/s]JPEG Quality 10:  25%|██▌       | 5/20 [00:01<00:03,  4.04it/s]JPEG Quality 10:  35%|███▌      | 7/20 [00:01<00:02,  6.06it/s]JPEG Quality 10:  45%|████▌     | 9/20 [00:02<00:02,  5.24it/s]JPEG Quality 10:  60%|██████    | 12/20 [00:02<00:01,  7.89it/s]JPEG Quality 10:  70%|███████   | 14/20 [00:02<00:00,  6.12it/s]JPEG Quality 10:  85%|████████▌ | 17/20 [00:03<00:00,  5.91it/s]JPEG Quality 10: 100%|██████████| 20/20 [00:03<00:00,  8.16it/s]JPEG Quality 10: 100%|██████████| 20/20 [00:03<00:00,  5.69it/s]
+  -> BPP: 0.4251 | PSNR: 30.91 dB
+JPEG Quality 30:   0%|          | 0/20 [00:00<?, ?it/s]JPEG Quality 30:   5%|▌         | 1/20 [00:00<00:11,  1.59it/s]JPEG Quality 30:  15%|█▌        | 3/20 [00:00<00:03,  4.97it/s]JPEG Quality 30:  25%|██▌       | 5/20 [00:01<00:02,  5.15it/s]JPEG Quality 30:  35%|███▌      | 7/20 [00:01<00:01,  7.48it/s]JPEG Quality 30:  45%|████▌     | 9/20 [00:01<00:01,  6.62it/s]JPEG Quality 30:  60%|██████    | 12/20 [00:01<00:00,  9.52it/s]JPEG Quality 30:  70%|███████   | 14/20 [00:02<00:00,  7.69it/s]JPEG Quality 30:  85%|████████▌ | 17/20 [00:02<00:00,  7.49it/s]JPEG Quality 30: 100%|██████████| 20/20 [00:02<00:00,  9.96it/s]JPEG Quality 30: 100%|██████████| 20/20 [00:02<00:00,  7.54it/s]
+  -> BPP: 0.7690 | PSNR: 32.70 dB
+JPEG Quality 50:   0%|          | 0/20 [00:00<?, ?it/s]JPEG Quality 50:   5%|▌         | 1/20 [00:00<00:11,  1.62it/s]JPEG Quality 50:  15%|█▌        | 3/20 [00:00<00:03,  5.06it/s]JPEG Quality 50:  25%|██▌       | 5/20 [00:01<00:02,  5.22it/s]JPEG Quality 50:  40%|████      | 8/20 [00:01<00:01,  8.54it/s]JPEG Quality 50:  50%|█████     | 10/20 [00:01<00:01,  7.23it/s]JPEG Quality 50:  65%|██████▌   | 13/20 [00:02<00:00,  7.03it/s]JPEG Quality 50:  80%|████████  | 16/20 [00:02<00:00,  9.29it/s]JPEG Quality 50:  90%|█████████ | 18/20 [00:02<00:00,  7.82it/s]JPEG Quality 50: 100%|██████████| 20/20 [00:02<00:00,  7.51it/s]
+  -> BPP: 1.0231 | PSNR: 33.53 dB
+JPEG Quality 70:   0%|          | 0/20 [00:00<?, ?it/s]JPEG Quality 70:   5%|▌         | 1/20 [00:00<00:11,  1.63it/s]JPEG Quality 70:  15%|█▌        | 3/20 [00:00<00:03,  4.89it/s]JPEG Quality 70:  25%|██▌       | 5/20 [00:01<00:02,  5.36it/s]JPEG Quality 70:  35%|███▌      | 7/20 [00:01<00:01,  7.67it/s]JPEG Quality 70:  45%|████▌     | 9/20 [00:01<00:01,  6.69it/s]JPEG Quality 70:  55%|█████▌    | 11/20 [00:01<00:01,  8.63it/s]JPEG Quality 70:  65%|██████▌   | 13/20 [00:02<00:00,  7.21it/s]JPEG Quality 70:  75%|███████▌  | 15/20 [00:02<00:00,  9.06it/s]JPEG Quality 70:  85%|████████▌ | 17/20 [00:02<00:00,  7.48it/s]JPEG Quality 70: 100%|██████████| 20/20 [00:02<00:00, 10.30it/s]JPEG Quality 70: 100%|██████████| 20/20 [00:02<00:00,  7.58it/s]
+  -> BPP: 1.3586 | PSNR: 34.38 dB
+JPEG Quality 90:   0%|          | 0/20 [00:00<?, ?it/s]JPEG Quality 90:   5%|▌         | 1/20 [00:00<00:11,  1.63it/s]JPEG Quality 90:  15%|█▌        | 3/20 [00:00<00:03,  4.89it/s]JPEG Quality 90:  25%|██▌       | 5/20 [00:01<00:02,  5.42it/s]JPEG Quality 90:  35%|███▌      | 7/20 [00:01<00:01,  7.68it/s]JPEG Quality 90:  45%|████▌     | 9/20 [00:01<00:01,  6.75it/s]JPEG Quality 90:  55%|█████▌    | 11/20 [00:01<00:01,  8.69it/s]JPEG Quality 90:  65%|██████▌   | 13/20 [00:02<00:00,  7.16it/s]JPEG Quality 90:  75%|███████▌  | 15/20 [00:02<00:00,  8.91it/s]JPEG Quality 90:  85%|████████▌ | 17/20 [00:02<00:00,  7.57it/s]JPEG Quality 90:  95%|█████████▌| 19/20 [00:02<00:00,  9.30it/s]JPEG Quality 90: 100%|██████████| 20/20 [00:02<00:00,  7.55it/s]
+  -> BPP: 2.4558 | PSNR: 36.30 dB
+
+==================================================
+EVALUATING: BASELINE - STANDARD_VQVAE
+==================================================
+  [!] WARNING: Khong tim thay checkpoints/baselines/vqvae_best.pth. Chay voi random weights!
+Testing Erasure 00%:   0%|          | 0/20 [00:00<?, ?it/s]Testing Erasure 00%:   5%|▌         | 1/20 [00:01<00:26,  1.37s/it]Testing Erasure 00%:  25%|██▌       | 5/20 [00:01<00:03,  4.32it/s]Testing Erasure 00%:  45%|████▌     | 9/20 [00:01<00:01,  8.19it/s]Testing Erasure 00%:  60%|██████    | 12/20 [00:01<00:00,  8.39it/s]Testing Erasure 00%:  70%|███████   | 14/20 [00:02<00:00,  7.14it/s]Testing Erasure 00%:  85%|████████▌ | 17/20 [00:02<00:00,  9.68it/s]Testing Erasure 00%:  95%|█████████▌| 19/20 [00:02<00:00,  7.95it/s]Testing Erasure 00%: 100%|██████████| 20/20 [00:02<00:00,  6.79it/s]
+  -> BPP: 0.1250 | PSNR: 8.08 dB | SSIM: 0.0065
+Testing Erasure 10%:   0%|          | 0/20 [00:00<?, ?it/s]Testing Erasure 10%:   5%|▌         | 1/20 [00:00<00:11,  1.68it/s]Testing Erasure 10%:  25%|██▌       | 5/20 [00:01<00:02,  5.40it/s]Testing Erasure 10%:  45%|████▌     | 9/20 [00:01<00:01,  6.70it/s]Testing Erasure 10%:  65%|██████▌   | 13/20 [00:01<00:00,  7.39it/s]Testing Erasure 10%:  85%|████████▌ | 17/20 [00:02<00:00,  7.66it/s]Testing Erasure 10%: 100%|██████████| 20/20 [00:02<00:00,  7.69it/s]
+  -> BPP: 0.1125 | PSNR: 8.07 dB | SSIM: 0.0077
+Testing Erasure 20%:   0%|          | 0/20 [00:00<?, ?it/s]Testing Erasure 20%:   5%|▌         | 1/20 [00:00<00:10,  1.74it/s]Testing Erasure 20%:  25%|██▌       | 5/20 [00:01<00:02,  5.33it/s]Testing Erasure 20%:  45%|████▌     | 9/20 [00:01<00:01,  6.71it/s]Testing Erasure 20%:  65%|██████▌   | 13/20 [00:01<00:00,  7.42it/s]Testing Erasure 20%:  85%|████████▌ | 17/20 [00:02<00:00,  7.70it/s]Testing Erasure 20%: 100%|██████████| 20/20 [00:02<00:00,  7.74it/s]
+  -> BPP: 0.1000 | PSNR: 8.06 dB | SSIM: 0.0076
+Testing Erasure 30%:   0%|          | 0/20 [00:00<?, ?it/s]Testing Erasure 30%:   5%|▌         | 1/20 [00:00<00:12,  1.54it/s]Testing Erasure 30%:  25%|██▌       | 5/20 [00:01<00:02,  5.16it/s]Testing Erasure 30%:  45%|████▌     | 9/20 [00:01<00:01,  6.50it/s]Testing Erasure 30%:  65%|██████▌   | 13/20 [00:02<00:00,  7.18it/s]Testing Erasure 30%:  85%|████████▌ | 17/20 [00:02<00:00,  7.62it/s]Testing Erasure 30%: 100%|██████████| 20/20 [00:02<00:00,  7.51it/s]
+  -> BPP: 0.0875 | PSNR: 8.05 dB | SSIM: 0.0070
+Testing Erasure 40%:   0%|          | 0/20 [00:00<?, ?it/s]Testing Erasure 40%:   5%|▌         | 1/20 [00:00<00:11,  1.72it/s]Testing Erasure 40%:  25%|██▌       | 5/20 [00:01<00:02,  5.29it/s]Testing Erasure 40%:  45%|████▌     | 9/20 [00:01<00:01,  6.69it/s]Testing Erasure 40%:  65%|██████▌   | 13/20 [00:02<00:00,  7.28it/s]Testing Erasure 40%:  85%|████████▌ | 17/20 [00:02<00:00,  7.77it/s]Testing Erasure 40%: 100%|██████████| 20/20 [00:02<00:00,  7.73it/s]
+  -> BPP: 0.0750 | PSNR: 8.05 dB | SSIM: 0.0063
+Testing Erasure 50%:   0%|          | 0/20 [00:00<?, ?it/s]Testing Erasure 50%:   5%|▌         | 1/20 [00:00<00:11,  1.70it/s]Testing Erasure 50%:  25%|██▌       | 5/20 [00:01<00:02,  5.24it/s]Testing Erasure 50%:  45%|████▌     | 9/20 [00:01<00:01,  6.71it/s]Testing Erasure 50%:  65%|██████▌   | 13/20 [00:02<00:01,  6.87it/s]Testing Erasure 50%:  85%|████████▌ | 17/20 [00:02<00:00,  7.35it/s]Testing Erasure 50%: 100%|██████████| 20/20 [00:02<00:00,  7.44it/s]
+  -> BPP: 0.0625 | PSNR: 8.03 dB | SSIM: 0.0045
+
+==================================================
+EVALUATING: BASELINE - NAIVE_FUSION
+==================================================
+  [!] WARNING: Khong tim thay checkpoints/baselines/naive_best.pth. Chay voi random weights!
+Testing Erasure 00%:   0%|          | 0/20 [00:00<?, ?it/s]Testing Erasure 00%:   5%|▌         | 1/20 [00:00<00:11,  1.68it/s]Testing Erasure 00%:  25%|██▌       | 5/20 [00:01<00:02,  5.33it/s]Testing Erasure 00%:  45%|████▌     | 9/20 [00:01<00:01,  6.70it/s]Testing Erasure 00%:  60%|██████    | 12/20 [00:01<00:00,  9.36it/s]Testing Erasure 00%:  70%|███████   | 14/20 [00:02<00:00,  7.58it/s]Testing Erasure 00%:  85%|████████▌ | 17/20 [00:02<00:00,  7.31it/s]Testing Erasure 00%: 100%|██████████| 20/20 [00:02<00:00,  9.83it/s]Testing Erasure 00%: 100%|██████████| 20/20 [00:02<00:00,  7.69it/s]
+  -> BPP: 0.1250 | PSNR: 9.10 dB | SSIM: 0.0706
+Testing Erasure 10%:   0%|          | 0/20 [00:00<?, ?it/s]Testing Erasure 10%:   5%|▌         | 1/20 [00:00<00:11,  1.70it/s]Testing Erasure 10%:  25%|██▌       | 5/20 [00:01<00:02,  5.35it/s]Testing Erasure 10%:  45%|████▌     | 9/20 [00:01<00:01,  6.73it/s]Testing Erasure 10%:  65%|██████▌   | 13/20 [00:01<00:00,  7.43it/s]Testing Erasure 10%:  85%|████████▌ | 17/20 [00:02<00:00,  7.82it/s]Testing Erasure 10%: 100%|██████████| 20/20 [00:02<00:00,  7.78it/s]
+  -> BPP: 0.1125 | PSNR: 9.09 dB | SSIM: 0.0606
+Testing Erasure 20%:   0%|          | 0/20 [00:00<?, ?it/s]Testing Erasure 20%:   5%|▌         | 1/20 [00:00<00:10,  1.73it/s]Testing Erasure 20%:  25%|██▌       | 5/20 [00:01<00:02,  5.33it/s]Testing Erasure 20%:  45%|████▌     | 9/20 [00:01<00:01,  6.63it/s]Testing Erasure 20%:  65%|██████▌   | 13/20 [00:02<00:00,  7.29it/s]Testing Erasure 20%:  85%|████████▌ | 17/20 [00:02<00:00,  7.74it/s]Testing Erasure 20%: 100%|██████████| 20/20 [00:02<00:00,  7.72it/s]
+  -> BPP: 0.1000 | PSNR: 9.05 dB | SSIM: 0.0532
+Testing Erasure 30%:   0%|          | 0/20 [00:00<?, ?it/s]Testing Erasure 30%:   5%|▌         | 1/20 [00:00<00:11,  1.70it/s]Testing Erasure 30%:  25%|██▌       | 5/20 [00:01<00:02,  5.40it/s]Testing Erasure 30%:  45%|████▌     | 9/20 [00:01<00:01,  6.75it/s]Testing Erasure 30%:  65%|██████▌   | 13/20 [00:01<00:00,  7.40it/s]Testing Erasure 30%:  85%|████████▌ | 17/20 [00:02<00:00,  7.73it/s]Testing Erasure 30%: 100%|██████████| 20/20 [00:02<00:00,  7.74it/s]
+  -> BPP: 0.0875 | PSNR: 9.00 dB | SSIM: 0.0473
+Testing Erasure 40%:   0%|          | 0/20 [00:00<?, ?it/s]Testing Erasure 40%:   5%|▌         | 1/20 [00:00<00:11,  1.72it/s]Testing Erasure 40%:  25%|██▌       | 5/20 [00:01<00:02,  5.24it/s]Testing Erasure 40%:  45%|████▌     | 9/20 [00:01<00:01,  6.69it/s]Testing Erasure 40%:  65%|██████▌   | 13/20 [00:02<00:00,  7.27it/s]Testing Erasure 40%:  85%|████████▌ | 17/20 [00:02<00:00,  7.77it/s]Testing Erasure 40%: 100%|██████████| 20/20 [00:02<00:00,  7.71it/s]
+  -> BPP: 0.0750 | PSNR: 8.93 dB | SSIM: 0.0415
+Testing Erasure 50%:   0%|          | 0/20 [00:00<?, ?it/s]Testing Erasure 50%:   5%|▌         | 1/20 [00:00<00:11,  1.66it/s]Testing Erasure 50%:  25%|██▌       | 5/20 [00:01<00:02,  5.27it/s]Testing Erasure 50%:  45%|████▌     | 9/20 [00:01<00:01,  6.68it/s]Testing Erasure 50%:  65%|██████▌   | 13/20 [00:02<00:00,  7.28it/s]Testing Erasure 50%:  85%|████████▌ | 17/20 [00:02<00:00,  7.78it/s]Testing Erasure 50%: 100%|██████████| 20/20 [00:02<00:00,  7.70it/s]
+  -> BPP: 0.0625 | PSNR: 8.87 dB | SSIM: 0.0368
+Downloading: "https://download.pytorch.org/models/raft_small_C_T_V2-01064c6d.pth" to /home/s2410433/uncertainty_dsc_v2x/.cache/torch/hub/checkpoints/raft_small_C_T_V2-01064c6d.pth
+
+==================================================
+EVALUATING: BASELINE - RAFT_LATE_FUSION
+==================================================
+  [!] WARNING: Khong tim thay checkpoints/baselines/raft_best.pth. Chay voi random weights!
+Testing Erasure 00%:   0%|          | 0/20 [00:00<?, ?it/s]Testing Erasure 00%:   5%|▌         | 1/20 [00:01<00:23,  1.25s/it]Testing Erasure 00%:  15%|█▌        | 3/20 [00:01<00:06,  2.62it/s]Testing Erasure 00%:  25%|██▌       | 5/20 [00:01<00:03,  4.45it/s]Testing Erasure 00%:  35%|███▌      | 7/20 [00:01<00:02,  6.16it/s]Testing Erasure 00%:  45%|████▌     | 9/20 [00:01<00:01,  7.68it/s]Testing Erasure 00%:  55%|█████▌    | 11/20 [00:02<00:01,  8.96it/s]Testing Erasure 00%:  65%|██████▌   | 13/20 [00:02<00:00,  9.99it/s]Testing Erasure 00%:  75%|███████▌  | 15/20 [00:02<00:00,  9.86it/s]Testing Erasure 00%:  85%|████████▌ | 17/20 [00:02<00:00, 10.64it/s]Testing Erasure 00%:  95%|█████████▌| 19/20 [00:02<00:00,  8.76it/s]Testing Erasure 00%: 100%|██████████| 20/20 [00:03<00:00,  6.60it/s]
+  -> BPP: 0.1250 | PSNR: 9.34 dB | SSIM: 0.0784
+Testing Erasure 10%:   0%|          | 0/20 [00:00<?, ?it/s]Testing Erasure 10%:   5%|▌         | 1/20 [00:00<00:12,  1.58it/s]Testing Erasure 10%:  15%|█▌        | 3/20 [00:00<00:03,  4.52it/s]Testing Erasure 10%:  25%|██▌       | 5/20 [00:01<00:02,  5.32it/s]Testing Erasure 10%:  35%|███▌      | 7/20 [00:01<00:01,  7.09it/s]Testing Erasure 10%:  45%|████▌     | 9/20 [00:01<00:01,  6.80it/s]Testing Erasure 10%:  55%|█████▌    | 11/20 [00:01<00:01,  8.16it/s]Testing Erasure 10%:  65%|██████▌   | 13/20 [00:02<00:00,  7.35it/s]Testing Erasure 10%:  75%|███████▌  | 15/20 [00:02<00:00,  8.54it/s]Testing Erasure 10%:  85%|████████▌ | 17/20 [00:02<00:00,  7.72it/s]Testing Erasure 10%:  95%|█████████▌| 19/20 [00:02<00:00,  8.83it/s]Testing Erasure 10%: 100%|██████████| 20/20 [00:02<00:00,  7.27it/s]
+  -> BPP: 0.1125 | PSNR: 9.33 dB | SSIM: 0.0704
+Testing Erasure 20%:   0%|          | 0/20 [00:00<?, ?it/s]Testing Erasure 20%:   5%|▌         | 1/20 [00:00<00:11,  1.59it/s]Testing Erasure 20%:  15%|█▌        | 3/20 [00:00<00:03,  4.54it/s]Testing Erasure 20%:  25%|██▌       | 5/20 [00:01<00:02,  5.30it/s]Testing Erasure 20%:  35%|███▌      | 7/20 [00:01<00:01,  7.07it/s]Testing Erasure 20%:  45%|████▌     | 9/20 [00:01<00:01,  6.74it/s]Testing Erasure 20%:  55%|█████▌    | 11/20 [00:01<00:01,  8.10it/s]Testing Erasure 20%:  65%|██████▌   | 13/20 [00:02<00:00,  7.27it/s]Testing Erasure 20%:  75%|███████▌  | 15/20 [00:02<00:00,  8.47it/s]Testing Erasure 20%:  85%|████████▌ | 17/20 [00:02<00:00,  7.82it/s]Testing Erasure 20%:  95%|█████████▌| 19/20 [00:02<00:00,  8.93it/s]Testing Erasure 20%: 100%|██████████| 20/20 [00:02<00:00,  7.30it/s]
+  -> BPP: 0.1000 | PSNR: 9.28 dB | SSIM: 0.0638
+Testing Erasure 30%:   0%|          | 0/20 [00:00<?, ?it/s]Testing Erasure 30%:   5%|▌         | 1/20 [00:00<00:11,  1.63it/s]Testing Erasure 30%:  15%|█▌        | 3/20 [00:00<00:03,  4.63it/s]Testing Erasure 30%:  25%|██▌       | 5/20 [00:01<00:02,  5.33it/s]Testing Erasure 30%:  35%|███▌      | 7/20 [00:01<00:01,  7.09it/s]Testing Erasure 30%:  45%|████▌     | 9/20 [00:01<00:01,  6.84it/s]Testing Erasure 30%:  55%|█████▌    | 11/20 [00:01<00:01,  8.19it/s]Testing Erasure 30%:  65%|██████▌   | 13/20 [00:02<00:00,  7.23it/s]Testing Erasure 30%:  75%|███████▌  | 15/20 [00:02<00:00,  8.43it/s]Testing Erasure 30%:  85%|████████▌ | 17/20 [00:02<00:00,  7.81it/s]Testing Erasure 30%:  95%|█████████▌| 19/20 [00:02<00:00,  8.91it/s]Testing Erasure 30%: 100%|██████████| 20/20 [00:02<00:00,  7.32it/s]
+  -> BPP: 0.0875 | PSNR: 9.33 dB | SSIM: 0.0655
+Testing Erasure 40%:   0%|          | 0/20 [00:00<?, ?it/s]Testing Erasure 40%:   5%|▌         | 1/20 [00:00<00:12,  1.57it/s]Testing Erasure 40%:  15%|█▌        | 3/20 [00:00<00:03,  4.49it/s]Testing Erasure 40%:  25%|██▌       | 5/20 [00:01<00:02,  5.24it/s]Testing Erasure 40%:  35%|███▌      | 7/20 [00:01<00:01,  7.01it/s]Testing Erasure 40%:  45%|████▌     | 9/20 [00:01<00:01,  6.65it/s]Testing Erasure 40%:  55%|█████▌    | 11/20 [00:01<00:01,  8.01it/s]Testing Erasure 40%:  65%|██████▌   | 13/20 [00:02<00:00,  7.33it/s]Testing Erasure 40%:  75%|███████▌  | 15/20 [00:02<00:00,  8.52it/s]Testing Erasure 40%:  85%|████████▌ | 17/20 [00:02<00:00,  7.59it/s]Testing Erasure 40%:  95%|█████████▌| 19/20 [00:02<00:00,  8.72it/s]Testing Erasure 40%: 100%|██████████| 20/20 [00:02<00:00,  7.19it/s]
+  -> BPP: 0.0750 | PSNR: 9.34 dB | SSIM: 0.0654
+Testing Erasure 50%:   0%|          | 0/20 [00:00<?, ?it/s]Testing Erasure 50%:   5%|▌         | 1/20 [00:00<00:12,  1.55it/s]Testing Erasure 50%:  15%|█▌        | 3/20 [00:00<00:03,  4.46it/s]Testing Erasure 50%:  25%|██▌       | 5/20 [00:01<00:02,  5.30it/s]Testing Erasure 50%:  35%|███▌      | 7/20 [00:01<00:01,  7.07it/s]Testing Erasure 50%:  45%|████▌     | 9/20 [00:01<00:01,  6.76it/s]Testing Erasure 50%:  55%|█████▌    | 11/20 [00:01<00:01,  8.12it/s]Testing Erasure 50%:  65%|██████▌   | 13/20 [00:02<00:00,  7.29it/s]Testing Erasure 50%:  75%|███████▌  | 15/20 [00:02<00:00,  8.49it/s]Testing Erasure 50%:  85%|████████▌ | 17/20 [00:02<00:00,  7.68it/s]Testing Erasure 50%:  95%|█████████▌| 19/20 [00:02<00:00,  8.80it/s]Testing Erasure 50%: 100%|██████████| 20/20 [00:02<00:00,  7.24it/s]
+  -> BPP: 0.0625 | PSNR: 9.34 dB | SSIM: 0.0654
+
+================================================================================
+BÁO CÁO KẾT QUẢ CÁC MÔ HÌNH BASELINE (TEST SET)
+================================================================================
+           Model   Condition  Eff_BPP  PSNR    SSIM
+            JPEG  Quality_10   0.4251 30.91     N/A
+            JPEG  Quality_30   0.7690 32.70     N/A
+            JPEG  Quality_50   1.0231 33.53     N/A
+            JPEG  Quality_70   1.3586 34.38     N/A
+            JPEG  Quality_90   2.4558 36.30     N/A
+  Standard_VQVAE  Erasure_0%   0.1250  8.08  0.0065
+  Standard_VQVAE Erasure_10%   0.1125  8.07  0.0077
+  Standard_VQVAE Erasure_20%   0.1000  8.06  0.0076
+  Standard_VQVAE Erasure_30%   0.0875  8.05   0.007
+  Standard_VQVAE Erasure_40%   0.0750  8.05  0.0063
+  Standard_VQVAE Erasure_50%   0.0625  8.03  0.0045
+    Naive_Fusion  Erasure_0%   0.1250  9.10  0.0706
+    Naive_Fusion Erasure_10%   0.1125  9.09  0.0606
+    Naive_Fusion Erasure_20%   0.1000  9.05  0.0532
+    Naive_Fusion Erasure_30%   0.0875  9.00  0.0473
+    Naive_Fusion Erasure_40%   0.0750  8.93  0.0415
+    Naive_Fusion Erasure_50%   0.0625  8.87  0.0368
+RAFT_Late_Fusion  Erasure_0%   0.1250  9.34  0.0784
+RAFT_Late_Fusion Erasure_10%   0.1125  9.33  0.0704
+RAFT_Late_Fusion Erasure_20%   0.1000  9.28  0.0638
+RAFT_Late_Fusion Erasure_30%   0.0875  9.33  0.0655
+RAFT_Late_Fusion Erasure_40%   0.0750  9.34  0.0654
+RAFT_Late_Fusion Erasure_50%   0.0625  9.34  0.0654
+
+[SUCCESS] Đã lưu kết quả dạng bảng vào: baselines_evaluation_results.csv
+==========================================================
+[SUCCESS] Hoan thanh danh gia Baselines luc: Wed 16 Sep 2026 04:06:33 AM JST
