@@ -1,4 +1,3 @@
-# configs/default_config.yaml
 experiment:
   name: "uncertainty_dsc_kitti"
   seed: 42
@@ -11,10 +10,13 @@ data:
   num_workers: 4
 
 channel:
-  # Cho phép model làm quen với tỉ lệ mất gói từ 0% đến 50% trong quá trình train
+  # 1. Packet Loss (BEC)
   train_erasure_range: [0.0, 0.5]
-  # Các mốc cố định để đánh giá kiểm thử và vẽ đồ thị PSNR vs. Erasure Rate
   eval_erasure_rates: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5]
+  
+  # 2. Bit Flip Noise (BSC) - BỔ SUNG
+  train_bit_flip_range: [0.0, 0.02]
+  eval_bit_flip_probs: [0.0, 0.005, 0.01, 0.02]
 
 loss_weights:
   lambda_recon: 1.0        # Trọng số tái tạo ảnh Target Y

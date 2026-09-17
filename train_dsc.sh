@@ -5,7 +5,7 @@
 #SBATCH -c 8
 #SBATCH --gres=gpu:1
 #SBATCH --mem=128G
-#SBATCH --time=72:00:00
+#SBATCH --time=12:00:00
 #SBATCH -o DSC_Train_Output-%j.log
 
 # Di chuyển vào thư mục submit job
@@ -63,6 +63,8 @@ export BN_DISABLE_MALLOC_STATS=1
 
 # Dùng -u để log in trực tiếp ra file real-time
 python -u train_all_rates.py
+python -u evaluate_all.py
+
 
 echo "=========================================================="
 echo "[SUCCESS] Toan bo thi nghiem hoan thanh luc: $(date)"

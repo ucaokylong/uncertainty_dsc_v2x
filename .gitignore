@@ -11,7 +11,7 @@ data/kitti/
 *.jpeg
 *.npy
 *.npz
-
+*.sh
 # Logs, checkpoints, Slurm outputs
 *.log
 *.pth
@@ -21,7 +21,7 @@ DSC_Train_Output-*.log
 checkpoints/
 runs/
 experiments/
-
+*.out
 # Environment / IDE
 .DS_Store
 .vscode/

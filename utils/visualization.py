@@ -1,32 +1,38 @@
+import os
 import torch
 import torchvision
+import numpy as np
 import matplotlib.pyplot as plt
-import os
+import matplotlib.cm as cm
 
 def denormalize(tensor):
     """Chuyển tensor từ [-1, 1] về [0, 1] để lưu thành ảnh."""
-    return (tensor + 1.0) / 2.0
+    return torch.clamp((tensor + 1.0) / 2.0, 0.0, 1.0)
 
 def save_comparison_grid(img_X, img_Y, img_Y_prime, img_Y_hat, uncertainty_map, epoch, batch_idx, save_dir):
     """
-    Xuất một lưới ảnh so sánh để đưa vào bài báo học thuật.
-    Cột: Xe 1 (Side Info), Xe 2 (Ground Truth), Ảnh nắn (Warped), Khôi phục (Reconstructed), Bản đồ bất định (Uncertainty).
+    Lưu 5 ảnh tách biệt vào một thư mục riêng để tiện chèn vào bài báo.
     """
-    os.makedirs(save_dir, exist_ok=True)
+    # Tạo thư mục con cho từng mẫu để không bị lẫn lộn
+    sample_dir = os.path.join(save_dir, f"erasure_{epoch:03d}_batch_{batch_idx:04d}")
+    os.makedirs(sample_dir, exist_ok=True)
     
-    # Lấy sample đầu tiên trong batch
+    # Lấy sample đầu tiên trong batch và denormalize
     X = denormalize(img_X[0].cpu())
     Y = denormalize(img_Y[0].cpu())
     Y_prime = denormalize(img_Y_prime[0].cpu())
     Y_hat = denormalize(img_Y_hat[0].cpu())
     
-    # Uncertainty map (1 kênh) -> lặp thành 3 kênh để ghép lưới cùng ảnh màu
-    U = uncertainty_map[0].cpu()
-    U_heatmap = U.repeat(3, 1, 1) 
+    # Xử lý Uncertainty Map thành Heatmap (Bản đồ nhiệt màu)
+    U = uncertainty_map[0, 0].cpu().numpy() # Lấy kênh đơn [H, W]
+    U = np.clip(U, 0, 1)
+    cmap = cm.get_cmap('jet') # Dùng thang màu Jet (Xanh -> Đỏ)
+    U_color = cmap(U)[..., :3] # Lấy RGB, bỏ kênh Alpha
+    U_heatmap = torch.from_numpy(U_color).permute(2, 0, 1).float()
     
-    # Ghép 5 ảnh thành 1 hàng ngang
-    grid = torchvision.utils.make_grid([X, Y, Y_prime, Y_hat, U_heatmap], nrow=5, padding=2, normalize=False)
-    
-    # Lưu file
-    file_path = os.path.join(save_dir, f"epoch_{epoch:03d}_batch_{batch_idx:04d}.png")
-    torchvision.utils.save_image(grid, file_path)
+    # Lưu từng file ảnh riêng lẻ
+    torchvision.utils.save_image(X, os.path.join(sample_dir, "01_X_SideInfo.png"))
+    torchvision.utils.save_image(Y, os.path.join(sample_dir, "02_Y_GroundTruth.png"))
+    torchvision.utils.save_image(Y_prime, os.path.join(sample_dir, "03_Y_prime_Warped.png"))
+    torchvision.utils.save_image(U_heatmap, os.path.join(sample_dir, "04_U_Uncertainty.png"))
+    torchvision.utils.save_image(Y_hat, os.path.join(sample_dir, "05_Y_hat_Reconstructed.png"))

@@ -82,4 +82,4 @@ class RAFTFusionBaseline(nn.Module):
         # Late Fusion giữa Ảnh nắn và Ảnh nháp
         img_Y_hat = self.late_fusion(torch.cat([img_Y_prime, img_Y_indep], dim=1))
         
-        return img_Y_hat, vq_loss, indices
+        return img_Y_hat, vq_loss, indices, img_Y_indep
