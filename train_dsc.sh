@@ -21,7 +21,7 @@ unset PYTHONHOME
 # BƯỚC 1: KÍCH HOẠT CONDA
 # ==========================================
 source $HOME/miniconda3/etc/profile.d/conda.sh
-conda activate neural_dsc
+conda activate mamba_venv
 
 # ==========================================
 # BƯỚC 2: LIÊN KẾT ĐƯỜNG DẪN CUDA & THƯ VIỆN NỘI BỘ
@@ -30,8 +30,8 @@ export CUDA_HOME=$CONDA_PREFIX
 export PATH=$CONDA_PREFIX/bin:$PATH
 export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
 
-export SSL_CERT_FILE=$(python -m certifi)
-export REQUESTS_CA_BUNDLE=$(python -m certifi)
+export SSL_CERT_FILE=$(python -m certifi 2>/dev/null)
+export REQUESTS_CA_BUNDLE=$SSL_CERT_FILE
 
 export HF_HOME=$SLURM_SUBMIT_DIR/.cache
 mkdir -p $HF_HOME
@@ -45,9 +45,12 @@ nvidia-smi
 # BƯỚC 3: KIỂM TRA NHANH (SMOKE TEST TRÊN A100)
 # ==========================================
 echo "=========================================================="
-echo "[CHECK] Kiem tra import PyTorch & Mamba tren GPU..."
+echo "[CHECK] Kiem tra import PyTorch, Torchvision & Mamba tren GPU..."
 echo "=========================================================="
-python -c "import torch, causal_conv1d, mamba_ssm; print('CUDA Ready:', torch.cuda.is_available(), '| Device:', torch.cuda.get_device_name(0))"
+python -c "import torch, torchvision, causal_conv1d, mamba_ssm; \
+print('CUDA Ready:', torch.cuda.is_available(), '| Device:', torch.cuda.get_device_name(0)); \
+from torchvision.ops import nms; print('Torchvision NMS: OK'); \
+from mamba_ssm import Mamba; print('Mamba SSM: OK')"
 
 # ==========================================
 # BƯỚC 4: CHẠY TRAINING CHÍNH THỨC
